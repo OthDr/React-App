@@ -1,8 +1,8 @@
-import Navbar from './Navbar'
-import Footer from './Footer'
-import Home from './Home'
-import Register from './Register'
-import Single from './Single'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Home from './components/Home'
+import Register from './components/Register'
+import Single from './components/Single'
 
 import {BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
