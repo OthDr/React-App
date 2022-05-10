@@ -1,5 +1,10 @@
 const Register = () => {
 
+	const handleClick = (e) => {
+		e.preventDefault();
+		// post request
+	}
+
 	return (
 		<div className="container">
 			
@@ -25,7 +30,7 @@ const Register = () => {
 							<input className="pwd-input" type='password'  name="pwd" /> </div> 
 						</tr>	
 						 <tr>
-						 <button>done</button>
+						 <button onClick={handleClick}>done</button>
 						 </tr>
 					</table>
 

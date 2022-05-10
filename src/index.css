@@ -85,20 +85,33 @@
 }
 
 .article-preview{
+  display: flex;
+  flex-direction: column;
   padding: 15px;
   background-color: #fff;
   margin-top: 15px;
   border-radius: 10px;
-  box-shadow: 1px 1px 4px #7676ff;
+  box-shadow: 1px 1px 4px #cce;
 }
-.article-preview h3 {
+.article-preview a {
+  padding-left: 6px;
+  text-decoration: none;
   color: #4040ff;
+  border-left: 3px solid orange;
+  margin-bottom: 12px;
 }
+.article-preview img {
+  border-radius: 5px;
+  width: 30%;
+  margin-bottom: 12px;
+ } 
 .article-preview h5 {
   color: #4040ff;
+  margin-bottom: 12px;
 }
 .article-preview span {
-  color: #9999ff;
+  color: orange;
+  font-size: 14px;
 }
 
 //*-------- Register form ------- */
@@ -150,7 +163,7 @@ margin-top: 19px;
 }
 
 .registration-form  button:hover{
-  background-color: #cfcf76;
+  background-color: orange;
 }
 
 /* single article */

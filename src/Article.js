@@ -1,14 +1,16 @@
 import { useState } from "react";
 const Article = ({article}) => {
 
-    
+	const article_id = article.id ;
+
     return (  
         <div className="article-preview" key={article.id}>
-            <h3>Title:  {article.title} </h3>
+
+            <a href={`/article/${article.id}`}>  Title:  {article.title} </a>
             <img src={article.urlToImage}></img>
             <p>{article.description}</p>
             <h5>Author: {article.author.firstname +' '+article.author.lastname}</h5>
-            <span> {article.publishedAt}</span>
+            <span> { article.createdAt.split('T')[0] }</span>
         </div>
     );
 }
