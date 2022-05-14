@@ -1,10 +1,34 @@
+import { useState , useEffect} from "react";
+import regValidation from "./regValidation";
+
+
+
 const Register = () => {
+
+
+
+
+
+	const [errors, setErrors] = useState({});
 
 	const handleClick = (e) => {
 		e.preventDefault();
+		setErrors(regValidation(credentials));
 		// post request
 	}
+	
+	const [credentials , setCredentials] = useState({
+		firstname:"",
+		firstname:"",
+		email:"",
+		password:""
+	});
 
+	const handleChange = (e) => {
+		setCredentials({
+			...credentials, [e.target.name]:e.target.value,
+		});
+	}
 	return (
 		<div className="container">
 			
@@ -14,23 +38,76 @@ const Register = () => {
 				</h1>
 					<table>
 						<tr>
-							<div className="fname"> <label for="fname">first name</label> 
-							<input className="fname-input" type="text"  name="fname"/> </div> 
+							<div className="fname"> 
+								<label htmlFor="fname">first name</label> 
+								<input 
+								 className="fname-input" 
+								 type="text"  
+								 name="firstname"
+								 onChange={handleChange}
+								/>
+							</div> 
 						</tr>
+						{errors.firstname &&
 						<tr>
-							<div className="lname"> <label for="lname">last name</label>
-							<input className="lname-input" type='text'  name="lname" />  </div> 
+							<p className="error-msg">{errors.firstname}</p> 
 						</tr>
+						}
+
 						<tr>
-							<div className="email"><label for="email">email</label>
-							<input className="email-input" type="text"  name="email"/> </div> 
+							<div className="lname"> 
+								<label htmlFor="lname">last name</label>
+								<input 
+								 className="lname-input" 
+								 type='text'  
+								 name="lastname" 
+								 onChange={handleChange}
+								/>  
+							</div> 
 						</tr>
+						{errors.lastname &&
 						<tr>
-							<div className="password"> <label for="pwd">password</label>
-							<input className="pwd-input" type='password'  name="pwd" /> </div> 
+							<p className="error-msg">{errors.lastname}</p> 
+						</tr>
+						}
+						<tr>
+							<div className="email">
+								<label htmlFor="email">email</label>
+								<input 
+								 className="email-input" 
+								 type="text"  
+								 name="email"
+								 onChange={handleChange}
+								/> 
+							</div> 
+						</tr>
+						{errors.email &&
+						<td>
+							<p className="error-msg">{errors.email}</p> 
+						</td>
+						}
+						<tr>
+							<div className="password"> 
+								<label htmlFor="pwd">password</label>
+								<input 
+								 className="pwd-input" 
+								 type='password'  
+								 name="password"
+								 onChange={handleChange} 
+								/> 
+							</div> 
 						</tr>	
+						{errors.password &&
+						<tr>
+							<p className="error-msg">{errors.password}</p> 
+						</tr>
+						}
 						 <tr>
-						 <button onClick={handleClick}>done</button>
+						 	<button onClick={handleClick}>Done</button>
+						 </tr>
+						 <tr className="or"> or </tr>
+						 <tr className="or">
+						 	<a href="/signup"> Already have an account? </a>
 						 </tr>
 					</table>
 

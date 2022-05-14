@@ -16,6 +16,7 @@
   margin: 0 auto;
   border-bottom: 1px solid #9999ff;
 }
+
 .footer{
   margin-top: 30px;
   padding: 40px;
@@ -118,14 +119,92 @@
 .container{
 
 }
-.registration-form table {
+.registration-form  table {
+  box-shadow: 2px 4px 8px 1px #aeaeff;
+  background-color: #fff;
+  width: 400px;
+  padding: 25px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+.registration-form div{
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.registration-form  input {
+  float: right;
+  width: 55%;
+  padding: 2px 8px;
+  border-style: none;
+  background-color: #eef;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  text-align: left;
+  color: #aaaaff;
+  font-size: 14px;
+}
+.error-msg{
+  color: #ff6767;
+  padding-left: 40%;
+  margin-bottom: 8px;
+}
+
+.registration-form  label {
+  font-size: 16px;
+  text-align: center;
+  color: #66f;
+}
+
+.registration-form  button {
+ margin-top: 19px;
+ margin-bottom: 12px;
+ width: 100%;
+ border-style: none;
+ border-radius: 12px;
+ background-color: #a1b5ff;
+ color:#fff;
+ padding: 2px 0;
+ box-shadow: 2px 4px 8px 1px #cacaff;
+ font-size: 16px;
+ font-weight: bold;
+ cursor: pointer;
+}
+
+.registration-form  button:hover{
+ background-color: #bdd1ff;
+  color: 
+}
+.registration-form  a{
+  color: #faa;
+  font-size: 16px;
+  text-decoration: none;
+}
+.registration-form  a:hover{
+  color: #faa;
+  font-weight: bolder;
+}
+.registration-form .or {
+  margin-top: 12px;
+  width: 100%;
+  text-align: center;
+}
+
+
+/*   Signup  */
+.signup-form  table {
+  box-shadow: 1px 1px 76px #aeaeff;
   background-color: #6776ff;
   width: 400px;
   padding: 25px;
   margin: 0 auto;
   border-radius: 6px;
 }
-.registration-form div{
+.signup-form div{
   margin-left: 10px;
   margin-right: 10px;
   width: 100%;
@@ -133,7 +212,7 @@
   margin-bottom: 6px;
 }
 
-.registration-form  input {
+.signup-form  input {
   float: right;
   border-style: none;
   border-bottom: solid 1px #eef;
@@ -145,13 +224,13 @@
   font-size: 16px;
 }
 
-.registration-form  label {
+.signup-form  label {
   font-size: 18px;
   text-align: center;
   color: #eef;
 }
 
-.registration-form  button {
+.signup-form  button {
 margin-top: 19px;
  width: 100%;
  border-style: none;
@@ -162,9 +241,11 @@ margin-top: 19px;
  font-weight: bold;
 }
 
-.registration-form  button:hover{
+.signup-form  button:hover{
   background-color: orange;
 }
+
+
 
 /* single article */
 .content{
