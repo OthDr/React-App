@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 const Signup = () => {
 
 
+
+
 	let navigate = useNavigate(); 
 	const [err, setErr] = useState(null);
 	const [errors, setErrors] = useState({});
@@ -52,9 +54,6 @@ const Signup = () => {
 			...credentials, [e.target.name]:e.target.value,
 		});
 	}
-
-
-	
 
 
 

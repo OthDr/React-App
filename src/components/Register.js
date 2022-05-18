@@ -1,28 +1,65 @@
 import { useState , useEffect} from "react";
 import regValidation from "./regValidation";
+import { useNavigate } from 'react-router-dom';
 
 
 
 const Register = () => {
 
 
+	const accessToken = window.localStorage.getItem("accessToken");
 
-
+	let navigate = useNavigate();
 
 	const [errors, setErrors] = useState({});
+	const [err, setErr] = useState(null);
+	const [isPending , setISPending] = useState(false);
+	const [credentials , setCredentials] = useState({
+		firstname:"",
+		lastname:"",
+		email:"",
+		password:""
+	});
+
 
 	const handleClick = (e) => {
 		e.preventDefault();
 		setErrors(regValidation(credentials));
 		// post request
+
+		if(isPending == false){
+			if(!errors.email && !errors.password){	
+				setISPending(true);
+					fetch('http://localhost:3000/v2/api/authors', {
+						method: 'POST',
+						headers: { "Content-Type":"application/json" },
+						body: JSON.stringify(credentials)
+					})
+					.then(async (response)=>{
+						const res = await response.json();
+						
+						const accessToken = res.accessToken;
+						await window.localStorage.setItem("accessToken", accessToken);
+
+						setISPending(false);
+						if(res.error == false){
+							navigate('/signup');
+						}
+					})
+					.catch((e)=>{
+						console.log(e.message);
+						setErr(e.message);
+						setISPending(false);
+					});
+			}
+		}
+
+
+
+
+		
 	}
-	
-	const [credentials , setCredentials] = useState({
-		firstname:"",
-		firstname:"",
-		email:"",
-		password:""
-	});
+
 
 	const handleChange = (e) => {
 		setCredentials({
@@ -31,7 +68,7 @@ const Register = () => {
 	}
 	return (
 		<div className="container">
-			
+			{accessToken && navigate('/author')}
 			<form className="registration-form">
 				<h1 style={{align:"center"}}>
 					Reporter Registration
@@ -39,7 +76,7 @@ const Register = () => {
 					<table>
 						<tr>
 							<div className="fname"> 
-								<label htmlFor="fname">first name</label> 
+								<label htmlFor="firstname">first name</label> 
 								<input 
 								 className="fname-input" 
 								 type="text"  
@@ -56,7 +93,7 @@ const Register = () => {
 
 						<tr>
 							<div className="lname"> 
-								<label htmlFor="lname">last name</label>
+								<label htmlFor="lastname">last name</label>
 								<input 
 								 className="lname-input" 
 								 type='text'  
@@ -88,7 +125,7 @@ const Register = () => {
 						}
 						<tr>
 							<div className="password"> 
-								<label htmlFor="pwd">password</label>
+								<label htmlFor="password">password</label>
 								<input 
 								 className="pwd-input" 
 								 type='password'  
@@ -102,6 +139,11 @@ const Register = () => {
 							<p className="error-msg">{errors.password}</p> 
 						</tr>
 						}
+
+						{isPending &&
+						 	<tr className="or"> pending.. </tr>
+						 
+						 }
 						 <tr>
 						 	<button onClick={handleClick}>Done</button>
 						 </tr>

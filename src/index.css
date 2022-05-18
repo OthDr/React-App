@@ -50,7 +50,7 @@
   margin-left: 15px;
 }
 .navbar a:hover{
-  color:#4040ff
+  color:orange;
 }
 
 .content{
@@ -88,6 +88,7 @@
 .article-preview{
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 15px;
   background-color: #fff;
   margin-top: 15px;
@@ -96,11 +97,17 @@
 }
 .article-preview a {
   padding-left: 6px;
+  font-weight: bold;
   text-decoration: none;
-  color: #4040ff;
-  border-left: 3px solid orange;
+  color: #6767ff;
+  border-bottom: 3px solid orange;
   margin-bottom: 12px;
 }
+
+.article-preview p {
+color: #aeb2de ;
+}
+
 .article-preview img {
   border-radius: 5px;
   width: 30%;
@@ -111,6 +118,8 @@
   margin-bottom: 12px;
 }
 .article-preview span {
+
+  border-top: 3px solid orange;
   color: orange;
   font-size: 14px;
 }
@@ -279,3 +288,25 @@ margin-top: 19px;
   color : orange;
   margin-top: 12px;
 }
+
+/**   log-out  **/
+.logout-container button{
+  float: right;
+border: solid 2px #a1b5ff;
+ border-radius: 4px;
+ background-color: #fff;
+ color:#a1b5ff;
+ padding: 3px 6px;
+ font-size: 16px;
+ font-weight: bold;
+ cursor: pointer;
+
+}
+.logout-container button:hover{
+  float: right;
+color:#fff;
+ background-color: #a1b5ff;
+
+
+}
+
