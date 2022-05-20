@@ -33,12 +33,12 @@ const Single = () => {
 	},[]);
 
 	return(
-		<div clasName="main-single-article">
+		<div className="main-single-article">
 
 			{error && <div className="error"> {error} </div>}
 	        {loading && <div className="loading">Loading..</div>}
 	        { article &&
-			<div className="single-article" key={article.id}>
+			<div className="single-article" >
 		        <h2><span>Title : </span>  {article.title} </h2>
 	            <img src={article.urlToImage}></img>
 	            <h4>description:</h4>

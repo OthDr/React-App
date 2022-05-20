@@ -6,6 +6,8 @@ const ArticlesList = () => {
     const [articles , setArticle] = useState(null);
     const [loading , setLoading] = useState(true);
     const [error , setError] = useState(null);
+
+    const [authorId , setId] = useState(null);
     
     useEffect(()=>{
         setArticle(null);
@@ -20,6 +22,7 @@ const ArticlesList = () => {
         .then((data)=>{
             setArticle(data);
             setLoading(false);
+            setId(data.id)
             setError(null);
         })
         .catch((err) => {

@@ -9,7 +9,6 @@ const Article = ({article}) => {
             <a href={`/article/${article.id}`}>  Title:  {article.title} </a>
             <img src={article.urlToImage}></img>
             <p>Description: {article.description}</p>
-            <h5>Author: {article.author.firstname +' '+article.author.lastname}</h5>
             <span> { article.createdAt.split('T')[0] }</span>
         </div>
     );

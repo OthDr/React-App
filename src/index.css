@@ -91,9 +91,9 @@
   align-items: center;
   padding: 15px;
   background-color: #fff;
-  margin-top: 15px;
+  margin-top: 25px;
   border-radius: 10px;
-  box-shadow: 1px 1px 4px #cce;
+  box-shadow: 1px 2px 4px 1px #aab;
 }
 .article-preview a {
   padding-left: 6px;
@@ -110,7 +110,7 @@ color: #aeb2de ;
 
 .article-preview img {
   border-radius: 5px;
-  width: 30%;
+  width: 60%;
   margin-bottom: 12px;
  } 
 .article-preview h5 {
@@ -197,7 +197,7 @@ color: #aeb2de ;
   color: #faa;
   font-weight: bolder;
 }
-.registration-form .or {
+.or {
   margin-top: 12px;
   width: 100%;
   text-align: center;
@@ -273,7 +273,7 @@ margin-top: 19px;
 }
 
 .single-article img {
-  max-width: 40%;
+  max-width: 80%;
   margin-bottom: 16px;
 }
 .single-article p {
@@ -289,6 +289,25 @@ margin-top: 19px;
   margin-top: 12px;
 }
 
+
+/*  Profile page && add-article */
+.page-profile{
+}
+.main-profile{
+}
+
+.profile-infos{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: bottom solid 1px #eef;
+}
+
+.profile-infos h4 {
+  text-align: left;
+  color:#a1b5ff;
+
+}
 /**   log-out  **/
 .logout-container button{
   float: right;
@@ -306,7 +325,75 @@ border: solid 2px #a1b5ff;
   float: right;
 color:#fff;
  background-color: #a1b5ff;
+}
 
+/* add article */
+.add-article{
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 12px;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  box-shadow: 1px 2px 4px 1px #aab;
 
 }
 
+.add-article input{
+  border-radius: 4px;
+  font-size: 16px;
+  color: #77a;
+  padding: 4px 8px ;
+  background-color: #eef;
+  border: none;
+  outline: none;
+}
+
+.add-article label{
+  margin-top: 15px;
+}
+
+.add-article textarea{
+  border-radius: 4px;
+  font-size: 16px;
+  color: #77a;
+  padding: 4px 8px ;
+  background-color: #eef;
+  border: none;
+  outline: none;
+  resize: none;
+}
+
+
+.add-article p{
+  margin-left: -38%;
+}
+.content-input{
+  height: 100px;
+}
+
+
+.add-article button{
+  margin-top: 25px;
+  float: right;
+border: solid 2px #a1b5ff;
+ border-radius: 4px;
+ background-color: #a1b5ff;
+ color:#fff;
+ padding: 3px 6px;
+ font-size: 16px;
+ font-weight: bold;
+ cursor: pointer;
+
+}
+.add-article button:hover{
+  float: right;
+color:#a1b5ff;
+ background-color: #fff;
+}

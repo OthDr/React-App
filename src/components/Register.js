@@ -68,7 +68,6 @@ const Register = () => {
 	}
 	return (
 		<div className="container">
-			{accessToken && navigate('/author')}
 			<form className="registration-form">
 				<h1 style={{align:"center"}}>
 					Reporter Registration
