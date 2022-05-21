@@ -19,4 +19,4 @@ COPY . /usr/src/app
 
 EXPOSE 3006
 
-CMD ["npm","start"]
+CMD ["npm","run" ,"start"]
